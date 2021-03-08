@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VuePressでプラグインを作ってみた | Catalion.com</title>
+    <meta name="description" content="プログラミングとかゲームとか。">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.ec8487a3.css" as="style"><link rel="preload" href="/assets/js/app.0e32aed1.js" as="script"><link rel="preload" href="/assets/js/2.3cf8124f.js" as="script"><link rel="preload" href="/assets/js/25.9a5dac8e.js" as="script"><link rel="prefetch" href="/assets/js/10.67e1a946.js"><link rel="prefetch" href="/assets/js/11.723d940d.js"><link rel="prefetch" href="/assets/js/12.f028ba62.js"><link rel="prefetch" href="/assets/js/13.e1a10be7.js"><link rel="prefetch" href="/assets/js/14.b250c47e.js"><link rel="prefetch" href="/assets/js/15.b4e634af.js"><link rel="prefetch" href="/assets/js/16.55406dc7.js"><link rel="prefetch" href="/assets/js/17.beb36da2.js"><link rel="prefetch" href="/assets/js/18.33c58f91.js"><link rel="prefetch" href="/assets/js/19.8f8e4548.js"><link rel="prefetch" href="/assets/js/20.1efff3f9.js"><link rel="prefetch" href="/assets/js/21.4dfa3ae6.js"><link rel="prefetch" href="/assets/js/22.81894aa5.js"><link rel="prefetch" href="/assets/js/23.bdf578e7.js"><link rel="prefetch" href="/assets/js/24.c40b27e3.js"><link rel="prefetch" href="/assets/js/26.3e5c2db5.js"><link rel="prefetch" href="/assets/js/27.aeb992a0.js"><link rel="prefetch" href="/assets/js/28.cd848418.js"><link rel="prefetch" href="/assets/js/3.ae4da542.js"><link rel="prefetch" href="/assets/js/4.910d7b80.js"><link rel="prefetch" href="/assets/js/5.3a207d23.js"><link rel="prefetch" href="/assets/js/6.f583afb9.js"><link rel="prefetch" href="/assets/js/7.cb4e511a.js"><link rel="prefetch" href="/assets/js/8.4e174b70.js"><link rel="prefetch" href="/assets/js/9.4a257e2f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ec8487a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Catalion.com</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">プログラミング</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/dom/" class="nav-link">DOM操作入門</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">ブログ</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">プログラミング</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/dom/" class="nav-link">DOM操作入門</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">ブログ</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>2019年</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/2019/07/14/vuepress-plugin/" class="active sidebar-link">VuePressでプラグインを作ってみた</a></li><li><a href="/blog/2019/05/25/shikou-sketch1/" class="sidebar-link">思考スケッチ1</a></li><li><a href="/blog/2019/03/25/my-task-management/" class="sidebar-link">私のタスク管理</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>2018年</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vuepressでプラグインを作ってみた"><a href="#vuepressでプラグインを作ってみた" aria-hidden="true" class="header-anchor">#</a> VuePressでプラグインを作ってみた</h1> <p>当サイトではVuePressのサブディレクトリ以下をブログとして扱っている。少し前まではブログ構築に<a href="https://vuepress-plugin-blog.ulivz.com/" target="_blank" rel="noopener noreferrer">@vuepress/plugin-blog<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>を使っていたが、もっと簡単な機能でいいことと、VuePressの勉強もしたいと思っていたので自分で作ってみた。</p> <p>VuePress公式サイトの<a href="https://v1.vuepress.vuejs.org/plugin/" target="_blank" rel="noopener noreferrer">Plugin<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>を参考にした。</p> <h2 id="作りたいもの"><a href="#作りたいもの" aria-hidden="true" class="header-anchor">#</a> 作りたいもの</h2> <p>ブログといっても、以下のように必要な機能は少ない。</p> <ul><li>ページのURLに日付を入れる</li> <li>サイドバーに年ごとにグルーピングした記事一覧を表示</li></ul> <p>VuePress内の全ての記事をブログ化するのではなく、特定のディレクトリ内だけに適用させたい。</p> <h2 id="pluginの基本"><a href="#pluginの基本" aria-hidden="true" class="header-anchor">#</a> Pluginの基本</h2> <p>.vuepress内にscript/MyBlogPlugin.jsを作る。</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">options<span class="token punctuation">,</span> ctx</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'myblog-plugin'</span><span class="token punctuation">,</span> <span class="token comment">//プラグインの名前</span>
+
+    <span class="token comment">//TODO: ここにいろいろAPIを追加していく</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>プラグインを読み込ませるためにconfig.jsのpluginsに読み込み処理を追加</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><div class="highlighted"> </div><br><br><br></div><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./script/MyBlogPlugin.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">//この行を追加。作成するプラグインを読み込む</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="ページのurlに日付を入れる"><a href="#ページのurlに日付を入れる" aria-hidden="true" class="header-anchor">#</a> ページのURLに日付を入れる</h2> <p>ページのURLを変えるには、通常はマークダウンのfrontmatterにpermalinkを指定する。これをプラグインでできればうまくいくはず。つまり、プラグイン側で各ページのfrontmatterにアクセスする方法が分かればよい。</p> <p>ページのデータを拡張するにはextendPageDataを使用する。</p> <p>この関数をMyBlogPluginに追加する。</p> <div class="language-js extra-class"><div class="highlight-lines"><br><div class="highlighted"> </div><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br></div><pre class="language-js"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">options<span class="token punctuation">,</span> ctx</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> blogHome <span class="token operator">=</span> <span class="token string">'/_blog/'</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'myblog-plugin'</span><span class="token punctuation">,</span> <span class="token comment">//プラグインの名前</span>
+
+    <span class="token comment">//ページオブジェクト拡張用API</span>
+    <span class="token function">extendPageData</span> <span class="token punctuation">(</span><span class="token parameter">$page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//_blogディレクトリ以下をブログとする</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>$page<span class="token punctuation">.</span>regularPath<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span>blogHome<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>$page<span class="token punctuation">.</span>regularPath <span class="token operator">===</span> <span class="token string">'blogHome'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token comment">//ブログトップページのURLには日付は入れない</span>
+          $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>permalink <span class="token operator">=</span> <span class="token string">'/blog/'</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+          <span class="token comment">//各記事のURLは/blog/2019/07/14/xxxxのようになる</span>
+          $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>permalink <span class="token operator">=</span> <span class="token string">'/blog/:year/:month/:day/:slug'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>extendPageDataは全ての記事分呼ばれるのでブログ化処理は特定のディレクトリ内の記事のみに適用させている。$pageオブジェクトを使って各ページのデータを変更することができる。今回の場合は、frontmatterのpermalinkを変更している。</p> <h2 id="サイドバーに年ごとにグルーピングした記事一覧を表示"><a href="#サイドバーに年ごとにグルーピングした記事一覧を表示" aria-hidden="true" class="header-anchor">#</a> サイドバーに年ごとにグルーピングした記事一覧を表示</h2> <p>サイドバーは通常はconfig.jsのthemeConfigから設定できる。そこにスクリプトを書いてもいいのだが、ブログ関連の処理がちらばるのが嫌なのでプラグイン内でサイドバーをいじりたい。extendPageDataは各ページ毎に呼ばれるので、その後に一度呼ばれるようなAPIがほしい。そこでreadyを使う</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br></div><pre class="language-js"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">options<span class="token punctuation">,</span> ctx</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> blogHome <span class="token operator">=</span> <span class="token string">'/_blog/'</span>
+  <span class="token keyword">const</span> sidebarPages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">//サイドバーに表示するページ</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'myblog-plugin'</span><span class="token punctuation">,</span> <span class="token comment">//プラグインの名前</span>
+
+    <span class="token comment">//ページオブジェクト拡張用API</span>
+    <span class="token function">extendPageData</span> <span class="token punctuation">(</span><span class="token parameter">$page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>$page<span class="token punctuation">.</span>regularPath<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span>blogHome<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>$page<span class="token punctuation">.</span>regularPath <span class="token operator">===</span> <span class="token string">'blogHome'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>permalink <span class="token operator">=</span> <span class="token string">'/blog/'</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+          $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>permalink <span class="token operator">=</span> <span class="token string">'/blog/:year/:month/:day/:slug'</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">//サイドバーをありに設定</span>
+        $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>sidebar <span class="token operator">=</span> <span class="token boolean">true</span>
+        <span class="token comment">//ブログ対象記事のpageオブジェクトを持っておく</span>
+        sidebarPages<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>$page<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">//初期化後に呼ばれる。（extendPageDataより後に呼ばれる。)</span>
+    <span class="token keyword">async</span> <span class="token function">ready</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> sidebar <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+      <span class="token comment">//ホーム以外の記事を日付の降順に取得し、サイドバーに年毎にグループ分けして表示</span>
+      sidebarPages
+        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">$page</span> <span class="token operator">=&gt;</span> $page<span class="token punctuation">.</span>regularPath <span class="token operator">!==</span> blogHome<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$pageA<span class="token punctuation">,</span> $pageB</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> $pageB<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>date <span class="token operator">-</span> $pageA<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>date<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">$page</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> yyyy <span class="token operator">=</span> $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>date<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token keyword">let</span> group <span class="token operator">=</span> sidebar<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=&gt;</span> v<span class="token punctuation">.</span>title <span class="token operator">===</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>yyyy<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">年</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>group<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            group <span class="token operator">=</span> <span class="token punctuation">{</span>
+              title<span class="token punctuation">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>yyyy<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">年</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+              collapsable<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+              sidebarDepth<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+              children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+            sidebar<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>group<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+          group<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>$page<span class="token punctuation">.</span>regularPath<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token comment">//ctx.siteConfigでconfig.jsの設定へアクセスできる</span>
+      ctx<span class="token punctuation">.</span>siteConfig<span class="token punctuation">.</span>themeConfig<span class="token punctuation">.</span>sidebar<span class="token punctuation">[</span>blogHome<span class="token punctuation">]</span> <span class="token operator">=</span> sidebar
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>ready内では、config.jsのthemeConfig.sidebarに以下のような設定を作るのと同じことをやっている。</p> <div class="language-js extra-class"><pre class="language-js"><code>sidebar<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">'/_blog/'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'2019年'</span><span class="token punctuation">,</span>
+      collapsable<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//開閉可能</span>
+      sidebarDepth<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//通常は各ページ内のヘッダー要素へのリンクも作られるが、不要なので消す</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">'2019年の記事1のパス'</span><span class="token punctuation">,</span>
+        <span class="token string">'2019年の記事2のパス'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'2018年'</span><span class="token punctuation">,</span>
+      collapsable<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      sidebarDepth<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">'2018年の記事1のパス'</span><span class="token punctuation">,</span>
+        <span class="token string">'2018年の記事2のパス'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//以下省略</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>これでこのページのようなブログっぽいものが出来上がり。プラグインを作ればいろいろできそうなのでもっと試したい。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2019-8-4 19:39:10</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog/2019/05/25/shikou-sketch1/">
+          思考スケッチ1
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0e32aed1.js" defer></script><script src="/assets/js/2.3cf8124f.js" defer></script><script src="/assets/js/25.9a5dac8e.js" defer></script>
+  </body>
+</html>
